@@ -6,6 +6,14 @@
   <title>ALS</title>
 </head>
 <body>
-<iframe src="https://talented-electric-penguin.ngrok-free.app/ar" style="position:fixed; top:0; left:0; bottom:0; right:0; width: 100%; height: 100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999;"></iframe>
+<iframe name="principal" src="https://talented-electric-penguin.ngrok-free.app/ar" style="position:fixed; top:0; left:0; bottom:0; right:0; width: 100%; height: 100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; visibility: hidden;"></iframe>
 </body>
+<script>
+window.addEventListener('message', function(event) {    
+    if (event.data === 'BetterFy') {
+        console.log('Título recebido:', event.data); // Exibe o título no console
+        document.getElementsByName('principal')[0].style.visibility="visible";       
+    }
+});
+</script>
 </html>
